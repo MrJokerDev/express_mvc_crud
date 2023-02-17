@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo App</title>
+</head>
+<body>
+  <h1>Todo List</h1>
+
+  <ul>
+    <% todo.forEach(function(index) { %>
+      <li>
+        <h2><%= index.title %></h2>
+        <p><%= index.description %></p>
+        <a href="/edit/<%= index._id %>">Edit</a>
+        <form action="/delete/<%= index._id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+
+  <a href="/create">Create New Todo</a>
+</body>
+</html>
