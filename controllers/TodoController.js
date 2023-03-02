@@ -2,7 +2,7 @@ const Todo = require('../models/Todo');
 
 exports.index = async (req, res) => {
   const todo = await Todo.find();
-  res.render('index', { todo });
+  res.render('front/index', { todo });
 };
 
 exports.create = async (req, res) => {
@@ -17,7 +17,7 @@ exports.create = async (req, res) => {
 
 exports.edit = async (req, res) => {
   const todo = await Todo.findById(req.params.id);
-  res.render('edit', { todo });
+  res.render('crud/edit', { todo });
 };
 
 exports.update = async (req, res) => {

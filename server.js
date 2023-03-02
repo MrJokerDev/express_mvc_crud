@@ -7,7 +7,7 @@ const methodOverride = require('method-override');
 const todoRouter = require('./routes/router');
 
 const app = express();
-
+app.use(express.static(__dirname + '/public/'));
 // Set up view engine
 app.set('view engine', 'ejs');
 
@@ -22,8 +22,8 @@ app.use('/', todoRouter);
 mongoose.set("strictQuery", false);
 mongoose.connect('mongodb+srv://root:Password@cluster0.wi5grss.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    app.listen(3000, () => {
-      console.log('Server started on port http://localhost:3000');
+    app.listen(8000, () => {
+      console.log('Server started on port http://localhost:8000');
     });
   })
   .catch((err) => {
