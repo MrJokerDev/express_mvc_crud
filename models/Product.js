@@ -10,15 +10,15 @@ const todoSchema = new mongoose.Schema({
     required: true
     },
   price: {
-    type: Integer,
+    type: Number,
     required: true
     },
   image: {
     type: String,
-    required: true
+    required: false
   }
 });
 
-const Todo = mongoose.model('Todo', todoSchema);
+const Product = mongoose.model('Product', todoSchema);
 
-module.exports = Todo;
+module.exports = Product;

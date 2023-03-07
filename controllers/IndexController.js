@@ -1,4 +1,4 @@
-const Todo = require('../models/Todo');
+const Todo = require('../models/Admin');
 
 exports.index = async (req, res) => {
   res.render('front/index');

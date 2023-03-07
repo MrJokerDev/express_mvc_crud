@@ -24,6 +24,7 @@ mongoose.connect('mongodb+srv://root:Password@cluster0.wi5grss.mongodb.net/?retr
   .then(() => {
     app.listen(8000, () => {
       console.log('Server started on port http://localhost:8000');
+      console.log('Mongo DB success connected')
     });
   })
   .catch((err) => {
